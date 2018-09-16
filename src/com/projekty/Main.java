@@ -29,5 +29,15 @@ public class Main {
         System.out.println(alphanumeric.replaceAll("[aei]", "I replaced a letted here"));
         // a or e or i followed by F or J
         System.out.println(alphanumeric.replaceAll("[aei][Fj]", "X"));
+
+        System.out.println("harry".replaceAll("[Hh]arry", "Harry"));
+
+        // replace all letters but e and j
+        // [^ej] - negation of e and j
+        String newAlphanumeric = "abcDeeeF12Ghijkliijj99z";
+        System.out.println(newAlphanumeric.replaceAll("[^ej]", "X"));
+        System.out.println(newAlphanumeric.replaceAll("[abcdef345678]", "X"));
+        // shorter than above
+        System.out.println(alphanumeric.replaceAll("[a-f3-8]", "X"));
     }
 }
