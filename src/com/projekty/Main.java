@@ -39,5 +39,30 @@ public class Main {
         System.out.println(newAlphanumeric.replaceAll("[abcdef345678]", "X"));
         // shorter than above
         System.out.println(alphanumeric.replaceAll("[a-f3-8]", "X"));
+        // capital letters included
+        System.out.println(alphanumeric.replaceAll("[a-fA-F3-8]", "X"));
+        // turning off case-sensitivity
+        System.out.println(newAlphanumeric.replaceAll("(?i)[a-f3-8]", "X"));
+        // replace all digits
+        System.out.println(newAlphanumeric.replaceAll("[0-9]", "X"));
+        // \d does the same as above, additional \ is an escape character
+        System.out.println(newAlphanumeric.replaceAll("\\d", "X"));
+        // \D replaces all non-digits
+        System.out.println(newAlphanumeric.replaceAll("\\D", "X"));
+
+        String hasWhiteSpace = "I have blanks and\ta tab, and also a new line\n";
+        System.out.println(hasWhiteSpace);
+        // \s removes all whitespaces
+        System.out.println(hasWhiteSpace.replaceAll("\\s", ""));
+        // remove tabs
+        System.out.println(hasWhiteSpace.replaceAll("\\t", ""));
+        // \S remove all non-white space chars
+        System.out.println(hasWhiteSpace.replaceAll("\\S", ""));
+
+        System.out.println(newAlphanumeric.replaceAll("\\w", "X"));
+        System.out.println(hasWhiteSpace.replaceAll("\\w", "X"));
+        // \b surrounds each word with specified character
+        System.out.println(hasWhiteSpace.replaceAll("\\b", "X"));
+
     }
 }
